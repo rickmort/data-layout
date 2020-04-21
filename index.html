@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
+
+    <title>DCRDATA</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="title">
+                    <a href="./"><img src="./images/logo.png" alt=""></a>
+                    <h1>DCRDATA</h1>
+                </div>
+                <div class="nav-section">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="Search for blocks, adresses, transactions or proposal tokens">
+                        <button type="submit" class="searchButton">
+                          <img src="./images/search.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="navigation">
+                        <div class="hamburguerMenu">
+                            <div class="lineOne"></div>
+                            <div class="lineTwo"></div>
+                            <div class="lineThree"></div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="container">
+
+            <div id="chart-1" class="charts-container">
+                <div class="charts-options">
+                    <div class="chart-selection">
+                        <button id="dcr-price" href="" class="btn btn-3 dcr-price">DCR Price</button>
+                        <button id="ticket-price" href="" class="btn btn-3 ticket-price">Ticket Price</button>
+                    </div>
+                    <div class="options-wrapper" id="option-wrapper-1">
+                        <button id="chart-button" href="" class="btn active">Chart</button>
+                        <button id="table-button" href="" class="btn">Table</button>
+                        <button href="" class="btn btn-2">bittrex <img src="./images/down.svg" alt=""></button>
+                        <button href="" class="btn btn-2">BTC/DCR <img src="./images/down.svg" alt=""></button>
+                        <button href="" class="btn btn-2">1D <img src="./images/down.svg" alt=""></button>
+                        <button href="" class="btn btn-2">High <img src="./images/down.svg" alt=""></button>
+                        <button href="" class="btn btn-2">All <img src="./images/down.svg" alt=""></button>
+                    </div>
+                    <div style="display: none;" class="options-wrapper" id="option-wrapper-2">
+                        <button href="" class="btn btn-2">Ticket Price <img src="./images/down.svg" alt=""></button>
+                        <button href="" class="btn btn-2">All <img src="./images/down.svg" alt=""></button>
+                        <button id="smooth-button" href="" class="btn active">Smooth</button>
+                        <button id="stepped-button" href="" class="btn">Stepped</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas height="100%" id="myChart"></canvas>
+                    <canvas style="display: none;" height="100%" id="chartTicketPrice"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-section container">
+        <div class="row-1">
+            <div class="row-1-wrapper">
+                <div class="header-row-1">
+                    <h4>DCR/USD</h4>
+                </div>
+                <div class="body-row-1">
+                    <h4>$11.95</h4>
+                </div>
+            </div>
+            <div class="row-1-wrapper">
+                <div class="header-row-1">
+                    <h4>DCR/BTC</h4>
+                </div>
+                <div class="body-row-1">
+                    <h4>0.001737 </h4>
+                </div>
+            </div>
+            <div class="row-1-wrapper">
+                <div class="header-row-1">
+                    <h4>Current Ticket Price</h4>
+                </div>
+                <div class="body-row-1">
+                    <h4>$138.37</h4>
+                </div>
+            </div>
+        </div>
+        <div class="c-1">
+            <div class="title-c-1">
+                <h4>Lasted Mainnet Blocks</h4>
+            </div>
+            <div class="info-c-1">
+
+            </div>
+            <div class="table-c-1">
+                <table>
+                    <tr>
+                        <th>Height</th>
+                        <th>Transactions</th>
+                        <th>Votes</th>
+                        <th>Tickets</th>
+                        <th>Revokes</th>
+                        <th>DCR</th>
+                        <th>Size</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>442737</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1.56K</td>
+                        <td>4.4kB</td>
+                        <td>3m 58s</td>
+                    </tr>
+                    <tr>
+                        <td>442736</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1.04K</td>
+                        <td>3kB</td>
+                        <td>7m 37s</td>
+                    </tr>
+                    <tr>
+                        <td>442735</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>1.50k</td>
+                        <td>4.5kB</td>
+                        <td>8m 57s</td>
+                    </tr>
+                    <tr>
+                        <td>442734</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1.66k</td>
+                        <td>4.7kB</td>
+                        <td>10m  2s</td>
+                    </tr>
+                    <tr>
+                        <td>442733</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>949</td>
+                        <td>9.6kB</td>
+                        <td>19m 25s</td>
+                    </tr>
+                    <tr>
+                        <td>442732</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1.20k</td>
+                        <td>7.8kB</td>
+                        <td>21m 15s</td>
+                    </tr>
+                    <tr>
+                        <td>442731</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>1.16k</td>
+                        <td>4.0kB</td>
+                        <td>21m 35s</td>
+                    </tr>
+                    <tr>
+                        <td>442730</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1.15K</td>
+                        <td>4.5kB</td>
+                        <td>21m 40s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="c-2">
+            <div class="title-c-2">
+                <h4>Voting</h4>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!--
+<div class="charts-container">
+    <div class="price">
+        <p>Ticket Price</p>
+        <h3>138.1 DCR</h3>
+    </div>
+    <div class="charts-options">
+        <button href="" class="btn btn-2">Ticket Price <img src="./images/down.svg" alt=""></button>
+        <button href="" class="btn btn-2">All <img src="./images/down.svg" alt=""></button>
+        <button href="" class="btn btn-2">Price Ticket <img src="./images/down.svg" alt=""></button>
+        <button href="" class="btn">Smoot</button>
+        <button href="" class="btn">Stepped</button>
+    </div>
+    <div class="chartTicketPrice">
+        <canvas id="chartTicketPrice"></canvas>
+    </div>
+</div>
+-->
